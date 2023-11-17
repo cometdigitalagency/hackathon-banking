@@ -1,16 +1,17 @@
-# super_shy_banking
 
-A new Flutter project.
+# SUPER SHY BANKING
+ໂປຣເຈັກນີ້ແມ່ນສ້າງຂື້ນມາເພື່ອນຳໃຊ້ເຂົ້າໃນການແຂ່ງຂັນງານ Comet Hackathon 2023 ພາຍໃຕ້ຫົວຂໍ້ທີ່ວ່າ: " ການນຳເອົາ Software ທີ່ມີຢູ່ໃນລາວ ແລະ ນຳມາປັບປຸງໃຫ້ມີປະສິດທິພາບຫຼາຍຂື້ນ ໂດຍນຳໃຊ້ flutter ເພື່ອພັດທະນາໃຫ້ຢູ່ໃນລັກສະນະ module ຫຼື package "
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Core Features
 
-A few resources to get you started if this is your first Flutter project:
+- Basic Data Visualization (ການເບິ່ງພາຍລວມລາຍຮັບ-ຈ່າຍ)
+- Payment Category (ການເບິ່ງປະເພດຂອງການຈ່າຍ)
+- Customizable Payment Filters (ການເບິ່ງປະຫວັດການໃຊ້-ຈ່າຍຕົວການມີຕົວເລືອກ)
+- Improved UX/UI Experience (ປັບປຸງການອອກແບບ && ປະສົບການຜູ້ໃຊ້)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Comet Hackathon 2023 
+
+[Comet Digital Agency ](https://www.facebook.com/CometDigitalAgency)
+
