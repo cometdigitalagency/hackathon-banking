@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:super_shy_banking/constants/constant_color.dart';
-import 'package:super_shy_banking/constants/constant_font_size.dart';
 import 'package:super_shy_banking/enums/expense_type.dart';
 import 'package:super_shy_banking/enums/transaction_type.dart';
 import 'package:super_shy_banking/features/history/providers/filter_state_provider.dart';
@@ -12,11 +11,8 @@ import 'package:super_shy_banking/features/history/widgets/transaction_list_cont
 import 'package:super_shy_banking/utils/utils.dart';
 import 'package:super_shy_banking/widgets/active_custom_container_filter.dart';
 import 'package:super_shy_banking/widgets/icon_custom_container_filter.dart';
-import 'package:super_shy_banking/widgets/income_container_icon.dart';
 
-import '../../../common/medium_custom_title.dart';
 import '../../../widgets/inactive_custom_container_filter.dart';
-import '../../../widgets/payment_container_icon.dart';
 
 class TransactionPage extends StatelessWidget {
   const TransactionPage({super.key});

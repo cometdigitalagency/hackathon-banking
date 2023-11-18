@@ -40,6 +40,13 @@ dependencies:
   flutter_hooks: ^0.20.3
   riverpod_annotation: ^2.3.1
   intl: ^0.18.1
+  flutter_dotenv: ^5.1.0
+  hasura_connect: ^4.0.0+4
+  logger: ^2.0.2+1
+  lottie: ^2.7.0
+  connectivity_plus: ^5.0.1
+  hasura_cache_interceptor: ^1.0.0-dev.7
+  hive_cache_interceptor: ^1.0.0-dev.4
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +78,7 @@ flutter:
   assets:
     - assets/
     - assets/icons/
+    - assets/json/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

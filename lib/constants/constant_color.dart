@@ -7,6 +7,8 @@ class ConstantColors {
   static const Color sucess = Color(0xff00B578);
   static const Color primary = Color(0xff1E3A8A);
   static const Color primary2 = Color(0xff3E5AA9);
+  static const errorColor = Color(0xFFFF5555);
+
   static List<Color> mainGradient = [
     const Color(0xFF3E5AA9),
     const Color(0xFF1E3A8A),

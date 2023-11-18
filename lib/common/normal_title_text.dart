@@ -2,24 +2,22 @@ import 'package:flutter/material.dart';
 
 import '../constants/constant_font_size.dart';
 
-class MeduimCustomTitle extends StatelessWidget {
-  const MeduimCustomTitle({
-    super.key,
+class NormalTitleText extends StatelessWidget {
+  const NormalTitleText({
+    Key? key,
     required this.title,
-    this.titleColor,
-  });
+  }) : super(key: key);
 
   final String title;
-  final Color? titleColor;
 
   @override
   Widget build(BuildContext context) {
     return Text(
       title,
-      style: TextStyle(
-        fontSize: ConstantFontSize.meduimTitle,
+      style: const TextStyle(
         fontWeight: FontWeight.bold,
-        color: titleColor,
+        fontSize: ConstantFontSize.smallTitle,
+        fontFamily: "Phetsarath",
       ),
     );
   }

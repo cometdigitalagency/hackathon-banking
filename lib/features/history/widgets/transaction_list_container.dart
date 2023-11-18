@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:super_shy_banking/common/medium_title_text.dart';
 import 'package:super_shy_banking/enums/transaction_type.dart';
 
-import '../../../common/medium_custom_title.dart';
 import '../../../constants/constant_color.dart';
 import '../../../constants/constant_font_size.dart';
 import '../../../widgets/income_container_icon.dart';
@@ -42,9 +42,8 @@ class TransactionListContainerItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  MeduimCustomTitle(title: headerTitle),
+                  MediumTitleText(title: headerTitle),
                   Text(
-                    // "21 ພະຈິກ 2023 15:00",
                     dateTimeText,
                     style: TextStyle(
                       fontSize: ConstantFontSize.smallTitle,
@@ -55,7 +54,7 @@ class TransactionListContainerItem extends StatelessWidget {
               ),
             ],
           ),
-          MeduimCustomTitle(
+          MediumTitleText(
             title: transactionType == TransactionType.imcome
                 ? "+$amount LAK"
                 : "-$amount LAK",
