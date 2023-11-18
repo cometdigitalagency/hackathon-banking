@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:super_shy_banking/common/medium_title_text.dart';
-import 'package:super_shy_banking/enums/transaction_type.dart';
-
-import '../../../constants/constant_color.dart';
-import '../../../constants/constant_font_size.dart';
-import '../../../widgets/income_container_icon.dart';
-import '../../../widgets/payment_container_icon.dart';
+part of super_shy_transaction_filter;
 
 class TransactionListContainerItem extends StatelessWidget {
   const TransactionListContainerItem({

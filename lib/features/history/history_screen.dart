@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:super_shy_banking/constants/constant_color.dart';
-import 'package:super_shy_banking/features/history/pages/statistic_page.dart';
-import 'package:super_shy_banking/features/history/pages/transaction_page.dart';
+
+import 'package:super_shy_transaction_filter/super_shy_transaction_filter.dart';
 
 import '../../common/common_appbar.dart';
 
@@ -23,39 +22,7 @@ class HistoryScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: DefaultTabController(
-        initialIndex: 0,
-        length: 2,
-        child: Column(
-          children: [
-            Container(
-              color: ConstantColors.white,
-              child: const TabBar(
-                indicatorSize: TabBarIndicatorSize.label,
-                indicatorColor: ConstantColors.primary,
-                unselectedLabelColor: ConstantColors.grey,
-                labelColor: ConstantColors.primary,
-                tabs: <Widget>[
-                  Tab(
-                    icon: Text("ການເຄື່ອນໄຫວ"),
-                  ),
-                  Tab(
-                    icon: Text("ສະຖິຕິ"),
-                  ),
-                ],
-              ),
-            ),
-            const Expanded(
-              child: TabBarView(
-                children: [
-                  TransactionPage(),
-                  StatisticPage(),
-                ],
-              ),
-            )
-          ],
-        ),
-      ),
+      body: const SuperShyTransaction(),
     );
   }
 }

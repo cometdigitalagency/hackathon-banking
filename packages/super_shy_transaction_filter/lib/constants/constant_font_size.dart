@@ -1,0 +1,8 @@
+part of super_shy_transaction_filter;
+
+class ConstantFontSize {
+  static const double appBarTitle = 18;
+  static const double smallTitle = 12;
+  static const double meduimTitle = 14;
+  static const double largeTitle = 16;
+}

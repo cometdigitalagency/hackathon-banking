@@ -1,24 +1,13 @@
 // ignore_for_file: deprecated_member_use
-
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:super_shy_banking/constants/constant_color.dart';
-import 'package:super_shy_banking/enums/expense_type.dart';
-import 'package:super_shy_banking/enums/transaction_type.dart';
-import 'package:super_shy_banking/features/history/providers/filter_state_provider.dart';
-import 'package:super_shy_banking/features/history/widgets/transaction_list_container.dart';
-import 'package:super_shy_banking/utils/utils.dart';
-import 'package:super_shy_banking/widgets/active_custom_container_filter.dart';
-import 'package:super_shy_banking/widgets/icon_custom_container_filter.dart';
-
-import '../../../widgets/inactive_custom_container_filter.dart';
+part of super_shy_transaction_filter;
 
 class TransactionPage extends StatelessWidget {
   const TransactionPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    DateTime now = DateTime.now();
+    DateTime firstDate = DateTime(now.year, now.month, 1);
     return Column(
       children: [
         const SizedBox(height: 10),
@@ -33,20 +22,28 @@ class TransactionPage extends StatelessWidget {
           ),
           child: Column(
             children: [
-              SizedBox(
-                height: 40,
-                width: double.infinity,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text("ພະຈິກ 2023"),
-                    const SizedBox(width: 2),
-                    SvgPicture.asset(
-                      height: 18,
+              FormBuilderDateRangePicker(
+                name: "date_range",
+                style: const TextStyle(
+                  fontSize: ConstantFontSize.meduimTitle,
+                ),
+                initialValue: DateTimeRange(start: firstDate, end: now),
+                format: DateFormat("dd/MM/yyyy"),
+                firstDate: DateTime.now().subtract(
+                  const Duration(days: 1000),
+                ),
+                lastDate: DateTime.now(),
+                textAlign: TextAlign.center,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  contentPadding: const EdgeInsets.fromLTRB(8, 12, 0, 12),
+                  suffixIcon: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 12),
+                    child: SvgPicture.asset(
                       "assets/icons/calendar.svg",
-                      color: ConstantColors.grey,
                     ),
-                  ],
+                  ),
+                  prefixText: "ເລືອກວັນທີ",
                 ),
               ),
               const SizedBox(height: 10),

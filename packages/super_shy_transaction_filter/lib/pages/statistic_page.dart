@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of super_shy_transaction_filter;
 
 class StatisticPage extends StatelessWidget {
   const StatisticPage({super.key});

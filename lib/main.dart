@@ -4,6 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:super_shy_banking/constants/constant_color.dart';
 import 'package:super_shy_banking/navigator_action.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
+
+import 'dialogs/loadings/loading_screen.dart';
+import 'providers/is_loading_provider.dart';
 
 void main() {
   runApp(
@@ -21,6 +26,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Super Shy Banking',
       debugShowCheckedModeBanner: false,
+      locale: const Locale('lo'),
+      supportedLocales: const [
+        Locale('en', 'US'),
+        Locale('lo', 'LA'),
+      ],
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        FormBuilderLocalizations.delegate,
+      ],
       theme: ThemeData(
         primarySwatch: ConstantColors.mainColor,
         fontFamily: "NotoSansLao",
@@ -29,7 +45,18 @@ class MyApp extends StatelessWidget {
         ),
         scaffoldBackgroundColor: ConstantColors.scaffoldBackgroundColor,
       ),
-      home: const NavigatorAction(),
+      home: Consumer(
+        builder: (context, ref, child) {
+          ref.listen(isLoadingProvider, (_, isLoading) {
+            if (isLoading) {
+              LoadingScreen.instance().show(context: context);
+            } else {
+              LoadingScreen.instance().hide();
+            }
+          });
+          return const NavigatorAction();
+        },
+      ),
     );
   }
 }

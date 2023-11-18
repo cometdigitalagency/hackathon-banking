@@ -1,10 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:super_shy_banking/enums/expense_type.dart';
+part of super_shy_transaction_filter;
 
-import '../constants/constant_color.dart';
-
-class ActiveCustomContainerFilter extends StatelessWidget {
-  const ActiveCustomContainerFilter({
+class InactiveCustomContainerFilter extends StatelessWidget {
+  const InactiveCustomContainerFilter({
     super.key,
     required this.expenseType,
   });
@@ -19,17 +16,15 @@ class ActiveCustomContainerFilter extends StatelessWidget {
         vertical: 6,
       ),
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: ConstantColors.mainGradient,
-          begin: Alignment.bottomCenter,
-          end: Alignment.topCenter,
+        border: Border.all(
+          color: ConstantColors.grey.withOpacity(.4),
         ),
         borderRadius: BorderRadius.circular(4),
       ),
       child: Text(
         expenseType.title,
         style: const TextStyle(
-          color: ConstantColors.white,
+          color: ConstantColors.grey,
         ),
       ),
     );

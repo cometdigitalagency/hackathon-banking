@@ -47,6 +47,14 @@ dependencies:
   connectivity_plus: ^5.0.1
   hasura_cache_interceptor: ^1.0.0-dev.7
   hive_cache_interceptor: ^1.0.0-dev.4
+  flutter_form_builder: ^9.1.1
+  flutter_localizations:
+    sdk: flutter
+  form_builder_validators: ^9.1.0
+
+  # Our locan package
+  super_shy_transaction_filter:
+    path: packages/super_shy_transaction_filter
 
 dev_dependencies:
   flutter_test:
