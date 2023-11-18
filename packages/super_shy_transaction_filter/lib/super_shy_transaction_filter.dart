@@ -1,5 +1,6 @@
 library super_shy_transaction_filter;
 
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
@@ -27,3 +28,10 @@ part 'models/super_shy_transaction_model.dart';
 part 'providers/filtered_transaction_provider.dart';
 part 'providers/super_shy_list_provider.dart';
 part 'providers/date_range_state_provider.dart';
+part 'widgets/custom_date_range_text_field.dart';
+part 'widgets/custom_container_with_pay_type.dart';
+part 'widgets/title_header_graphic.dart';
+part 'widgets/category_list_item.dart';
+part 'providers/income_list_provider.dart';
+part 'models/super_shy_transaction_seperate_category_model.dart';
+part 'providers/payment_list_provider.dart';

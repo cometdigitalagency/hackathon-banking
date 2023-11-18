@@ -38,7 +38,15 @@ class HistoryScreen extends StatelessWidget {
             isIncome: false,
             date: DateTime.now().subtract(const Duration(days: 10)),
             suffixTitle: "LAK",
-            category: "ອາຫານ",
+            category: "ຂອງຂັວນ ແລະ ການບໍລິຈາກ",
+          ),
+          SuperShyTransactionModel(
+            title: "ຊຳລະເງິນ",
+            value: 300000,
+            isIncome: true,
+            date: DateTime.now().subtract(const Duration(days: 10)),
+            suffixTitle: "LAK",
+            category: "ສຸຂະພາບ",
           ),
           SuperShyTransactionModel(
             title: "ໄດ້ຮັບເງິນ",
@@ -46,7 +54,7 @@ class HistoryScreen extends StatelessWidget {
             isIncome: true,
             date: DateTime.now(),
             suffixTitle: "LAK",
-            category: "ອາຫານ",
+            category: "ຂອງຂັວນ ແລະ ການບໍລິຈາກ",
           ),
           SuperShyTransactionModel(
             title: "ຊຳລະເງິນ",

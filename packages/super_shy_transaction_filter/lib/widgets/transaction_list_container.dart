@@ -35,7 +35,10 @@ class TransactionListContainerItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  MediumTitleText(title: headerTitle),
+                  MediumTitleText(
+                    title: headerTitle,
+                    isBold: true,
+                  ),
                   Text(
                     dateTimeText,
                     style: TextStyle(
@@ -54,6 +57,7 @@ class TransactionListContainerItem extends StatelessWidget {
             titleColor: transactionType == TransactionType.imcome
                 ? ConstantColors.sucess
                 : ConstantColors.grey,
+            isBold: true,
           ),
         ],
       ),

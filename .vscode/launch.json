@@ -1,0 +1,45 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "super_shy_banking",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "super_shy_banking (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "super_shy_banking (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "super_shy_transaction_filter",
+            "cwd": "packages/super_shy_transaction_filter",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "super_shy_transaction_filter (profile mode)",
+            "cwd": "packages/super_shy_transaction_filter",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "super_shy_transaction_filter (release mode)",
+            "cwd": "packages/super_shy_transaction_filter",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

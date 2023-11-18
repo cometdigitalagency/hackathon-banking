@@ -46,33 +46,9 @@ class _TransactionPageState extends ConsumerState<TransactionPage> {
             children: [
               FormBuilder(
                 key: _formKey,
-                child: FormBuilderDateRangePicker(
+                child: CustomDateRangeTextField(
                   name: "date_range",
-                  style: const TextStyle(
-                    fontSize: ConstantFontSize.meduimTitle,
-                  ),
-                  initialValue: DateTimeRange(
-                    start: DateTime.now().subtract(const Duration(days: 30)),
-                    end: DateTime.now(),
-                  ),
-                  format: DateFormat("dd/MM/yyyy"),
-                  firstDate: DateTime.now().subtract(
-                    const Duration(days: 1000),
-                  ),
-                  lastDate: DateTime.now(),
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    contentPadding: const EdgeInsets.fromLTRB(8, 12, 0, 12),
-                    suffixIcon: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 12),
-                      child: SvgPicture.asset(
-                        "assets/icons/calendar.svg",
-                      ),
-                    ),
-                    prefixText: "ເລືອກວັນທີ",
-                  ),
-                  onChanged: (DateTimeRange? dateRage) {
+                  onChange: (dateRage) {
                     if (dateRage == null) {
                       return;
                     }
@@ -120,22 +96,42 @@ class _TransactionPageState extends ConsumerState<TransactionPage> {
         Consumer(
           builder: (context, ref, child) {
             final filteredList = ref.watch(filteredTransaction);
+            refreshData() {
+              _formKey.currentState!.fields["date_range"]?.didChange(
+                DateTimeRange(
+                  start: DateTime.now().subtract(
+                    const Duration(days: 30),
+                  ),
+                  end: DateTime.now(),
+                ),
+              );
+              ref.invalidate(filterStateProvider);
+              ref.invalidate(dateRangeStateProvider);
+            }
+
             if (filteredList.isEmpty) {
-              return const MediumTitleText(title: "ບໍ່ພົບຂໍ້ມູນ");
+              return GestureDetector(
+                onTap: () {
+                  refreshData();
+                  ref.invalidate(filteredTransaction);
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const MediumTitleText(title: "ບໍ່ພົບຂໍ້ມູນ"),
+                    const SizedBox(width: 10),
+                    SvgPicture.asset(
+                      "assets/icons/reload.svg",
+                      color: ConstantColors.primary,
+                    )
+                  ],
+                ),
+              );
             }
             return Expanded(
               child: RefreshIndicator(
                 onRefresh: () async {
-                  _formKey.currentState!.fields["date_range"]?.didChange(
-                    DateTimeRange(
-                      start: DateTime.now().subtract(
-                        const Duration(days: 30),
-                      ),
-                      end: DateTime.now(),
-                    ),
-                  );
-                  ref.invalidate(filterStateProvider);
-                  ref.invalidate(dateRangeStateProvider);
+                  refreshData();
                   return ref.invalidate(filteredTransaction);
                 },
                 child: ListView.separated(
