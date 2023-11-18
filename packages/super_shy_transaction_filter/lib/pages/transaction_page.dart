@@ -60,6 +60,7 @@ class _TransactionPageState extends ConsumerState<TransactionPage> {
               Consumer(
                 builder: (context, ref, child) {
                   final currentFilter = ref.watch(filterStateProvider);
+                  final availableType = ref.watch(categoryTypeProvider);
                   return Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -82,8 +83,24 @@ class _TransactionPageState extends ConsumerState<TransactionPage> {
                           );
                         },
                       ),
-                      IconCustomContainerFilter(
-                        icon: SvgPicture.asset("assets/icons/filter.svg"),
+                      GestureDetector(
+                        onTap: () async {
+                          final selectedvalue =
+                              await showModalBottomSheetFilter(
+                            context,
+                            ref,
+                            currentCategoryList: availableType,
+                          );
+                          if (selectedvalue == null || selectedvalue.isEmpty) {
+                            ref.invalidate(categoryTypeStateProvider);
+                            return;
+                          }
+                          ref.read(categoryTypeStateProvider.notifier).state =
+                              selectedvalue;
+                        },
+                        child: IconCustomContainerFilter(
+                          icon: SvgPicture.asset("assets/icons/filter.svg"),
+                        ),
                       ),
                     ],
                   );

@@ -17,7 +17,7 @@ class InactiveCustomContainerFilter extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         border: Border.all(
-          color: ConstantColors.grey.withOpacity(.4),
+          color: ConstantColors.grey.withOpacity(.1),
         ),
         borderRadius: BorderRadius.circular(4),
       ),

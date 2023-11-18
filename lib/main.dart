@@ -7,9 +7,6 @@ import 'package:super_shy_banking/navigator_action.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 
-import 'dialogs/loadings/loading_screen.dart';
-import 'providers/is_loading_provider.dart';
-
 void main() {
   runApp(
     const ProviderScope(
@@ -47,13 +44,6 @@ class MyApp extends StatelessWidget {
       ),
       home: Consumer(
         builder: (context, ref, child) {
-          ref.listen(isLoadingProvider, (_, isLoading) {
-            if (isLoading) {
-              LoadingScreen.instance().show(context: context);
-            } else {
-              LoadingScreen.instance().hide();
-            }
-          });
           return const NavigatorAction();
         },
       ),

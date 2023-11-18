@@ -43,8 +43,6 @@ dependencies:
   flutter_dotenv: ^5.1.0
   hasura_connect: ^4.0.0+4
   logger: ^2.0.2+1
-  lottie: ^2.7.0
-  connectivity_plus: ^5.0.1
   hasura_cache_interceptor: ^1.0.0-dev.7
   hive_cache_interceptor: ^1.0.0-dev.4
   flutter_form_builder: ^9.1.1

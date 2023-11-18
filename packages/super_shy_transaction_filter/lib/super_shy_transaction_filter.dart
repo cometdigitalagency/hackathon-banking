@@ -34,3 +34,8 @@ part 'widgets/category_list_item.dart';
 part 'providers/income_list_provider.dart';
 part 'models/super_shy_transaction_seperate_category_model.dart';
 part 'providers/payment_list_provider.dart';
+part 'widgets/small_title_text.dart';
+part 'widgets/modal_bottom_sheet_filter.dart';
+part 'providers/category_type_provider.dart';
+part 'widgets/main_button.dart';
+part 'providers/category_type_state_provider.dart';

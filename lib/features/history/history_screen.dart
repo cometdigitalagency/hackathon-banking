@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
 import 'package:super_shy_transaction_filter/super_shy_transaction_filter.dart';
-
 import '../../common/common_appbar.dart';
 
 class HistoryScreen extends StatelessWidget {
