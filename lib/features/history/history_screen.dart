@@ -13,14 +13,14 @@ class HistoryScreen extends StatelessWidget {
     return Scaffold(
       appBar: commonAppbar(
         title: "ປະຫວັດທຸລະກຳ",
-        action: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: SvgPicture.asset(
-              "assets/icons/reload.svg",
-            ),
-          ),
-        ],
+        // action: [
+        //   Padding(
+        //     padding: const EdgeInsets.symmetric(horizontal: 16),
+        //     child: SvgPicture.asset(
+        //       "assets/icons/reload.svg",
+        //     ),
+        //   ),
+        // ],
       ),
       body: SuperShyTransaction(
         superShyTransactionList: [
@@ -28,7 +28,7 @@ class HistoryScreen extends StatelessWidget {
             title: "ໄດ້ຮັບເງິນ",
             value: 20000,
             isIncome: true,
-            date: DateTime.now(),
+            date: DateTime.now().subtract(const Duration(days: 20)),
             suffixTitle: "LAK",
             category: "ອາຫານ",
           ),
@@ -36,7 +36,7 @@ class HistoryScreen extends StatelessWidget {
             title: "ຊຳລະເງິນ",
             value: 200000,
             isIncome: false,
-            date: DateTime.now(),
+            date: DateTime.now().subtract(const Duration(days: 10)),
             suffixTitle: "LAK",
             category: "ອາຫານ",
           ),
@@ -52,7 +52,7 @@ class HistoryScreen extends StatelessWidget {
             title: "ຊຳລະເງິນ",
             value: 200000,
             isIncome: false,
-            date: DateTime.now(),
+            date: DateTime.now().subtract(const Duration(days: 1)),
             suffixTitle: "LAK",
             category: "ອາຫານ",
           ),

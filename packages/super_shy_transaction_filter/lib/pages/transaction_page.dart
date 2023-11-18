@@ -26,6 +26,8 @@ class _TransactionPageState extends ConsumerState<TransactionPage> {
     ref.read(superShyListProvider.notifier).state = superShyList;
   }
 
+  final _formKey = GlobalKey<FormBuilderState>();
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -42,31 +44,40 @@ class _TransactionPageState extends ConsumerState<TransactionPage> {
           ),
           child: Column(
             children: [
-              FormBuilderDateRangePicker(
-                name: "date_range",
-                style: const TextStyle(
-                  fontSize: ConstantFontSize.meduimTitle,
-                ),
-                initialValue: DateTimeRange(
-                  start: DateTime.now().subtract(const Duration(days: 30)),
-                  end: DateTime.now(),
-                ),
-                format: DateFormat("dd/MM/yyyy"),
-                firstDate: DateTime.now().subtract(
-                  const Duration(days: 1000),
-                ),
-                lastDate: DateTime.now(),
-                textAlign: TextAlign.center,
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  contentPadding: const EdgeInsets.fromLTRB(8, 12, 0, 12),
-                  suffixIcon: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 12),
-                    child: SvgPicture.asset(
-                      "assets/icons/calendar.svg",
-                    ),
+              FormBuilder(
+                key: _formKey,
+                child: FormBuilderDateRangePicker(
+                  name: "date_range",
+                  style: const TextStyle(
+                    fontSize: ConstantFontSize.meduimTitle,
                   ),
-                  prefixText: "ເລືອກວັນທີ",
+                  initialValue: DateTimeRange(
+                    start: DateTime.now().subtract(const Duration(days: 30)),
+                    end: DateTime.now(),
+                  ),
+                  format: DateFormat("dd/MM/yyyy"),
+                  firstDate: DateTime.now().subtract(
+                    const Duration(days: 1000),
+                  ),
+                  lastDate: DateTime.now(),
+                  textAlign: TextAlign.center,
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    contentPadding: const EdgeInsets.fromLTRB(8, 12, 0, 12),
+                    suffixIcon: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      child: SvgPicture.asset(
+                        "assets/icons/calendar.svg",
+                      ),
+                    ),
+                    prefixText: "ເລືອກວັນທີ",
+                  ),
+                  onChanged: (DateTimeRange? dateRage) {
+                    if (dateRage == null) {
+                      return;
+                    }
+                    ref.read(dateRangeStateProvider.notifier).state = dateRage;
+                  },
                 ),
               ),
               const SizedBox(height: 10),
@@ -109,25 +120,42 @@ class _TransactionPageState extends ConsumerState<TransactionPage> {
         Consumer(
           builder: (context, ref, child) {
             final filteredList = ref.watch(filteredTransaction);
+            if (filteredList.isEmpty) {
+              return const MediumTitleText(title: "ບໍ່ພົບຂໍ້ມູນ");
+            }
             return Expanded(
-              child: ListView.separated(
-                physics: const BouncingScrollPhysics(),
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                shrinkWrap: true,
-                itemBuilder: (context, index) {
-                  final transactionItem = filteredList[index];
-                  return TransactionListContainerItem(
-                    transactionType: transactionItem.isIncome
-                        ? TransactionType.imcome
-                        : TransactionType.payment,
-                    headerTitle: transactionItem.title,
-                    dateTimeText: Utils.formatDateTimeInTransactionList(
-                        transactionItem.date),
-                    amount: Utils.getCurrency(transactionItem.value),
+              child: RefreshIndicator(
+                onRefresh: () async {
+                  _formKey.currentState!.fields["date_range"]?.didChange(
+                    DateTimeRange(
+                      start: DateTime.now().subtract(
+                        const Duration(days: 30),
+                      ),
+                      end: DateTime.now(),
+                    ),
                   );
+                  ref.invalidate(filterStateProvider);
+                  ref.invalidate(dateRangeStateProvider);
+                  return ref.invalidate(filteredTransaction);
                 },
-                separatorBuilder: (context, _) => const SizedBox(height: 6),
-                itemCount: filteredList.length,
+                child: ListView.separated(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    final transactionItem = filteredList[index];
+                    return TransactionListContainerItem(
+                      transactionType: transactionItem.isIncome
+                          ? TransactionType.imcome
+                          : TransactionType.payment,
+                      headerTitle: transactionItem.title,
+                      dateTimeText: Utils.formatDateTimeInTransactionList(
+                          transactionItem.date),
+                      amount: Utils.getCurrency(transactionItem.value),
+                    );
+                  },
+                  separatorBuilder: (context, _) => const SizedBox(height: 6),
+                  itemCount: filteredList.length,
+                ),
               ),
             );
           },

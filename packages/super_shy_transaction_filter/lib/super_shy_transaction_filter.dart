@@ -26,3 +26,4 @@ part 'widgets/medium_title_text.dart';
 part 'models/super_shy_transaction_model.dart';
 part 'providers/filtered_transaction_provider.dart';
 part 'providers/super_shy_list_provider.dart';
+part 'providers/date_range_state_provider.dart';

@@ -13,7 +13,7 @@ class IconCustomContainerFilter extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(
         horizontal: 12,
-        vertical: 8.5,
+        vertical: 10,
       ),
       decoration: BoxDecoration(
         border: Border.all(
