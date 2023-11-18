@@ -1,12 +1,23 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 class BussinessScreen extends StatelessWidget {
   const BussinessScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("BussinessScreen"),
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        title: const Text(
+          'ປະຫວັດທຸລະກຳ',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      body: const Center(
+        child: Text("BussinessScreen"),
+      ),
     );
   }
 }

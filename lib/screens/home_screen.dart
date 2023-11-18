@@ -1,12 +1,17 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("HomeScreen"),
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+      ),
+      body: const Center(
+        child: Text("HomeScreen"),
+      ),
     );
   }
 }
