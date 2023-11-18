@@ -91,7 +91,7 @@ class StatisticPage extends ConsumerWidget {
                           .fold(
                               0, (sum, transaction) => sum + transaction.value);
                       return CategoriesListItem(
-                        percent: "60",
+                        percent: item.percentage.toStringAsFixed(2),
                         category: item.category,
                         suffix: "LAK",
                         value: sumPayment,
@@ -124,7 +124,7 @@ class StatisticPage extends ConsumerWidget {
                               0, (sum, transaction) => sum + transaction.value);
                       return CategoriesListItem(
                         color: ConstantColors.primary,
-                        percent: "60",
+                        percent: item.percentage.toStringAsFixed(2),
                         category: item.category,
                         suffix: "LAK",
                         value: sumPayment,

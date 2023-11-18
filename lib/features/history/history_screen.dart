@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:super_shy_transaction_filter/super_shy_transaction_filter.dart';
 
@@ -13,14 +12,6 @@ class HistoryScreen extends StatelessWidget {
     return Scaffold(
       appBar: commonAppbar(
         title: "ປະຫວັດທຸລະກຳ",
-        // action: [
-        //   Padding(
-        //     padding: const EdgeInsets.symmetric(horizontal: 16),
-        //     child: SvgPicture.asset(
-        //       "assets/icons/reload.svg",
-        //     ),
-        //   ),
-        // ],
       ),
       body: SuperShyTransaction(
         superShyTransactionList: [
