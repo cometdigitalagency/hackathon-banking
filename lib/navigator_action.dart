@@ -5,8 +5,8 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'constants/constant_color.dart';
-import 'screens/bussiness_screen.dart';
-import 'screens/home_screen.dart';
+import 'features/history/history_screen.dart';
+import 'features/home/home_screen.dart';
 
 class NavigatorAction extends HookWidget {
   const NavigatorAction({super.key});
@@ -19,7 +19,7 @@ class NavigatorAction extends HookWidget {
         index: currentIndex.value,
         children: const [
           HomeScreen(),
-          BussinessScreen(),
+          HistoryScreen(),
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:super_shy_banking/common/common_appbar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -6,9 +7,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-      ),
+      appBar: commonAppbar(),
       body: const Center(
         child: Text("HomeScreen"),
       ),
