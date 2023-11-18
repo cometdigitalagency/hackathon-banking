@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'dart:convert';
 
 part 'src/super_shy_transaction.dart';
 part 'pages/statistic_page.dart';
@@ -22,3 +23,6 @@ part 'widgets/income_container_icon.dart';
 part 'widgets/payment_container_icon.dart';
 part 'widgets/transaction_list_container.dart';
 part 'widgets/medium_title_text.dart';
+part 'models/super_shy_transaction_model.dart';
+part 'providers/filtered_transaction_provider.dart';
+part 'providers/super_shy_list_provider.dart';

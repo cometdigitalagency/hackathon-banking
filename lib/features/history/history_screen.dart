@@ -22,7 +22,42 @@ class HistoryScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: const SuperShyTransaction(),
+      body: SuperShyTransaction(
+        superShyTransactionList: [
+          SuperShyTransactionModel(
+            title: "ໄດ້ຮັບເງິນ",
+            value: 20000,
+            isIncome: true,
+            date: DateTime.now(),
+            suffixTitle: "LAK",
+            category: "ອາຫານ",
+          ),
+          SuperShyTransactionModel(
+            title: "ຊຳລະເງິນ",
+            value: 200000,
+            isIncome: false,
+            date: DateTime.now(),
+            suffixTitle: "LAK",
+            category: "ອາຫານ",
+          ),
+          SuperShyTransactionModel(
+            title: "ໄດ້ຮັບເງິນ",
+            value: 20000,
+            isIncome: true,
+            date: DateTime.now(),
+            suffixTitle: "LAK",
+            category: "ອາຫານ",
+          ),
+          SuperShyTransactionModel(
+            title: "ຊຳລະເງິນ",
+            value: 200000,
+            isIncome: false,
+            date: DateTime.now(),
+            suffixTitle: "LAK",
+            category: "ອາຫານ",
+          ),
+        ],
+      ),
     );
   }
 }

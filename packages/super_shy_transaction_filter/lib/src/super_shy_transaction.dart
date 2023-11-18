@@ -1,10 +1,15 @@
 part of super_shy_transaction_filter;
 
-class SuperShyTransaction extends StatelessWidget {
-  const SuperShyTransaction({super.key});
+class SuperShyTransaction extends ConsumerWidget {
+  const SuperShyTransaction({
+    super.key,
+    required this.superShyTransactionList,
+  });
+
+  final List<SuperShyTransactionModel> superShyTransactionList;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return DefaultTabController(
       initialIndex: 0,
       length: 2,
@@ -27,11 +32,13 @@ class SuperShyTransaction extends StatelessWidget {
               ],
             ),
           ),
-          const Expanded(
+          Expanded(
             child: TabBarView(
               children: [
-                TransactionPage(),
-                StatisticPage(),
+                TransactionPage(
+                  superShyTransactionModel: superShyTransactionList,
+                ),
+                const StatisticPage(),
               ],
             ),
           )
