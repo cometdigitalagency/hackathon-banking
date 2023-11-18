@@ -5,27 +5,13 @@ part of super_shy_transaction_filter;
 class TransactionPage extends StatefulHookConsumerWidget {
   const TransactionPage({
     Key? key,
-    required this.superShyTransactionModel,
   }) : super(key: key);
-
-  final List<SuperShyTransactionModel> superShyTransactionModel;
 
   @override
   ConsumerState<TransactionPage> createState() => _TransactionPageState();
 }
 
 class _TransactionPageState extends ConsumerState<TransactionPage> {
-  @override
-  void initState() {
-    setDataToState(widget.superShyTransactionModel);
-    super.initState();
-  }
-
-  setDataToState(List<SuperShyTransactionModel> superShyList) async {
-    await Future.delayed(const Duration(milliseconds: 100));
-    ref.read(superShyListProvider.notifier).state = superShyList;
-  }
-
   final _formKey = GlobalKey<FormBuilderState>();
 
   @override

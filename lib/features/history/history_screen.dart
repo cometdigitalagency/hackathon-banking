@@ -11,6 +11,7 @@ class HistoryScreen extends StatelessWidget {
       appBar: commonAppbar(
         title: "ປະຫວັດທຸລະກຳ",
       ),
+      // Dummy data for package testing
       body: SuperShyTransaction(
         superShyTransactionList: [
           SuperShyTransactionModel(

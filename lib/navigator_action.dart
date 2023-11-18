@@ -38,7 +38,8 @@ class NavigatorAction extends HookWidget {
             borderRadius: BorderRadius.circular(100.0),
           ),
           child: SvgPicture.asset(
-              "assets/icons/scanning.svg"), // Add your icon or child widget here
+            "assets/icons/scanning.svg",
+          ), // Add your icon or child widget here
         ),
         onPressed: () {},
       ),

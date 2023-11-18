@@ -24,7 +24,7 @@ AppBar commonAppbar({
         gradient: LinearGradient(
           colors: ConstantColors.mainGradient,
           begin: Alignment.bottomCenter,
-          end: Alignment.bottomCenter,
+          end: Alignment.topCenter,
         ),
       ),
     ),

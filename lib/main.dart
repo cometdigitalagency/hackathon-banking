@@ -42,11 +42,7 @@ class MyApp extends StatelessWidget {
         ),
         scaffoldBackgroundColor: ConstantColors.scaffoldBackgroundColor,
       ),
-      home: Consumer(
-        builder: (context, ref, child) {
-          return const NavigatorAction();
-        },
-      ),
+      home: const NavigatorAction(),
     );
   }
 }

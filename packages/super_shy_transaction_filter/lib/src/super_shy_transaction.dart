@@ -1,6 +1,6 @@
 part of super_shy_transaction_filter;
 
-class SuperShyTransaction extends ConsumerWidget {
+class SuperShyTransaction extends StatefulHookConsumerWidget {
   const SuperShyTransaction({
     super.key,
     required this.superShyTransactionList,
@@ -9,7 +9,24 @@ class SuperShyTransaction extends ConsumerWidget {
   final List<SuperShyTransactionModel> superShyTransactionList;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<ConsumerStatefulWidget> createState() =>
+      _SuperShyTransactionState();
+}
+
+class _SuperShyTransactionState extends ConsumerState<SuperShyTransaction> {
+  @override
+  void initState() {
+    setDataToState(widget.superShyTransactionList);
+    super.initState();
+  }
+
+  setDataToState(List<SuperShyTransactionModel> superShyList) async {
+    await Future.delayed(const Duration(milliseconds: 100));
+    ref.read(superShyListProvider.notifier).state = superShyList;
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return DefaultTabController(
       initialIndex: 0,
       length: 2,
@@ -32,13 +49,11 @@ class SuperShyTransaction extends ConsumerWidget {
               ],
             ),
           ),
-          Expanded(
+          const Expanded(
             child: TabBarView(
               children: [
-                TransactionPage(
-                  superShyTransactionModel: superShyTransactionList,
-                ),
-                const StatisticPage(),
+                TransactionPage(),
+                StatisticPage(),
               ],
             ),
           )
