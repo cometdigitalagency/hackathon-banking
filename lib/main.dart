@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
         floatingActionButtonTheme: const FloatingActionButtonThemeData(
           backgroundColor: ConstantColors.primary,
         ),
+        scaffoldBackgroundColor: ConstantColors.scaffoldBackgroundColor,
       ),
       home: const NavigatorAction(),
     );

@@ -24,7 +24,22 @@ class NavigatorAction extends HookWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        child: SvgPicture.asset("assets/icons/scanning.svg"),
+        backgroundColor: Colors.transparent, // Set a transparent background
+        child: Container(
+          width: double.infinity,
+          height: double.infinity,
+          padding: const EdgeInsets.all(12),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: ConstantColors.mainGradient,
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter,
+            ),
+            borderRadius: BorderRadius.circular(100.0),
+          ),
+          child: SvgPicture.asset(
+              "assets/icons/scanning.svg"), // Add your icon or child widget here
+        ),
         onPressed: () {},
       ),
       bottomNavigationBar: BottomNavigationBar(

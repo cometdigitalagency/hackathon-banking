@@ -23,7 +23,7 @@ AppBar commonAppbar({
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: ConstantColors.mainGradient,
-          begin: Alignment.topCenter,
+          begin: Alignment.bottomCenter,
           end: Alignment.bottomCenter,
         ),
       ),
