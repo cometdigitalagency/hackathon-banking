@@ -81,4 +81,22 @@ void main() {
 
     expect(categories, ['ອາຫານ', 'ຂອງຂັວນ ແລະ ການບໍລິຈາກ', 'ສຸຂະພາບ']);
   });
+
+  test('formatDateTime should format DateTime correctly', () {
+    DateTime dateTime = DateTime(2023, 11, 19);
+    String formattedDate = Utils.formatDateTime(dateTime);
+    expect(formattedDate, '19/11/2023');
+  });
+
+  test('formatDateTimeInTransactionList should format DateTime correctly', () {
+    DateTime dateTime = DateTime(2023, 11, 19, 14, 30);
+    String formattedDate = Utils.formatDateTimeInTransactionList(dateTime);
+    expect(formattedDate, '19 Nov 2023 14:30');
+  });
+
+  test('getCurrency should format number correctly', () {
+    num number = 500000; // Replace with your desired number
+    String formattedCurrency = Utils.getCurrency(number);
+    expect(formattedCurrency, '500,000');
+  });
 }
