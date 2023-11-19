@@ -178,7 +178,7 @@ class HistoryScreen extends StatelessWidget {
 ![App Screenshot](https://i.imgur.com/HpQB29H.png)
 
 ## Code coverage unit testing
-![App Screenshot](https://i.imgur.com/A8iAltJ.png)
+![App Screenshot](https://i.imgur.com/uolxVaK.png)
 
 ## Remaining features in the project or need to be done
 * Unable to modify the model 

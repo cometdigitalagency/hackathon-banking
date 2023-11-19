@@ -10,6 +10,13 @@ void main() {
     expect(superShyList, isEmpty);
     container.dispose();
   });
+  test('categoryTypeStateProvider initializes with an empty list', () async {
+    final container = ProviderContainer();
+    final categoryTypeState = container.read(categoryTypeStateProvider);
+    // Verify that the initial value is an empty list
+    expect(categoryTypeState, isEmpty);
+    container.dispose();
+  });
 
   test('dateRangeStateProvider initializes with null', () async {
     final container = ProviderContainer();
