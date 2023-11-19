@@ -20,6 +20,7 @@ class _SuperShyTransactionState extends ConsumerState<SuperShyTransaction> {
     super.initState();
   }
 
+  // set our mock data
   setDataToState(List<SuperShyTransactionModel> superShyList) async {
     await Future.delayed(const Duration(milliseconds: 100));
     ref.read(superShyListProvider.notifier).state = superShyList;

@@ -22,31 +22,31 @@ To add "super_shy_transaction_filter" to your Flutter application, follow these 
 
 1. Install the packages by running the following command in your terminal:
 
-   ```bash
-   $ flutter pub add super_shy_transaction_filter
-   ```
+    ```bash
+    $ flutter pub add super_shy_transaction_filter
+    ```
 
-This command will automatically add the package to your project's dependencies in the pubspec.yaml file.
+     This command will automatically add the package to your project's dependencies in the pubspec.yaml file.
 
 2. Once the package is added, your pubspec.yaml file should now include a line similar to the following:
 
-```bash
-dependencies:
-  super_shy_transaction_filter: ^1.0.0
-```
+    ```bash
+    dependencies:
+    super_shy_transaction_filter: ^1.0.0
+    ```
 If not, you can manually add it to your dependencies.
 
 3. Save the changes to your pubspec.yaml file and run the following command to fetch the package:
- ```bash
- $ flutter pub get
- ```
- This command will ensure that your project is updated with the newly added package.
+    ```bash
+    $ flutter pub get
+    ```
+     This command will ensure that your project is updated with the newly added package.
 4. Now, you can import the package in your Dart code by adding the following import statement:
- ```bash
- import 'package:super_shy_transaction_filter/super_shy_transaction.dart_filter';
- ```
+    ```bash
+    import 'package:super_shy_transaction_filter/super_shy_transaction.dart_filter';
+    ```
 
- You are now ready to utilize the features of the "super_shy_transaction_filter" package in your Flutter application.
+     You are now ready to utilize the features of the "super_shy_transaction_filter" package in your Flutter application.
  
 ## Usage/Examples
 Here's a simple example of how to use the package:
