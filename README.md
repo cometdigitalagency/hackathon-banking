@@ -1,71 +1,56 @@
 
 # Super shy transaction filter
-A Flutter financial transaction history flitering package that makes flitering easier. 
-We provided a stunning data visualization, easy-to-use filter container, and understandable transaction model,. 
-
-ໂປຣເຈັກນີ້ແມ່ນສ້າງຂື້ນມາເພື່ອນຳໃຊ້ເຂົ້າໃນການແຂ່ງຂັນງານ Comet Hackathon 2023 ພາຍໃຕ້ຫົວຂໍ້ທີ່ວ່າ: " ການນຳເອົາ Software ທີ່ມີຢູ່ໃນລາວ ແລະ ນຳມາປັບປຸງໃຫ້ມີປະສິດທິພາບຫຼາຍຂື້ນ ໂດຍນຳໃຊ້ flutter ເພື່ອພັດທະນາໃຫ້ຢູ່ໃນລັກສະນະ module ຫຼື package "
-
+Introducing a Flutter package for streamlined financial transaction history filtering, enhancing the filtering process. Our offering includes visually appealing data visualization, an intuitive filter container, and a comprehensible transaction model. 
 
 # Features
-* Basic Data Visualization 
-* Payment and income category
-* Filter Payment history transactions 
-*  Customizable Payment Filters 
-* Summary incomes and payments of all transactions by payment categories
+- Basic Data Visualization
+- Payment and Income Category
+- Filter Payment History Transactions
+- Customizable Payment Filters
+- Summary of Incomes and Payments by Payment Categories
 
 
 ## Dependencies
 
-* flutter_form_builder: ^9.1.1
-
- *  flutter_svg: ^2.0.9
-
-*   hooks_riverpod: ^2.4.6
-
-* intl: ^0.18.1
+- `flutter_form_builder: ^9.1.1`
+- `flutter_svg: ^2.0.9`
+- `hooks_riverpod: ^2.4.6`
+- `intl: ^0.18.1`
 
 ## Installation
-To add the geolocator to your Flutter application
+To add "super_shy_transaction_filter" to your Flutter application, follow these steps:
 
-* install the packages 
-Run this command:
+1. Install the packages by running the following command in your terminal:
 
-With Flutter:
+   ```bash
+   $ flutter pub add super_shy_transaction_filter
+   ```
 
-```bash
- $ flutter pub add super_shy_transaction_filter
+This command will automatically add the package to your project's dependencies in the pubspec.yaml file.
 
-```
-
-This will add a line like this to your package's pubspec.yaml
-
- (and run an implicit flutter pub get) :
+2. Once the package is added, your pubspec.yaml file should now include a line similar to the following:
 
 ```bash
- $ dependencies:
+dependencies:
   super_shy_transaction_filter: ^1.0.0
-
 ```
+If not, you can manually add it to your dependencies.
 
-Import it
-
-Now in your Dart code, 
-you can use:
-```bash
+3. Save the changes to your pubspec.yaml file and run the following command to fetch the package:
+ ```bash
+ $ flutter pub get
+ ```
+ This command will ensure that your project is updated with the newly added package.
+4. Now, you can import the package in your Dart code by adding the following import statement:
+ ```bash
  import 'package:super_shy_transaction_filter/super_shy_transaction.dart_filter';
+ ```
 
-```
-
-
+ You are now ready to utilize the features of the "super_shy_transaction_filter" package in your Flutter application.
  
 ## Usage/Examples
+Here's a simple example of how to use the package:
 
-
-* Examples
-
-
-
-The code below shows an example how to input list of parameters to our model
 
 ```dart
 
@@ -100,17 +85,10 @@ SuperShyTransaction(
 
 
 
-
-
-
-    
-
-
 ## Full Examples
+For a more detailed example, check the code in the HistoryScreen class, which includes a demo of the SuperShyTransaction widget and its usage.
 
 ``` dart
-
-
 import 'package:flutter/material.dart';
 import 'package:super_shy_transaction_filter/super_shy_transaction_filter.dart';
 import '../../common/common_appbar.dart';
@@ -178,16 +156,15 @@ class HistoryScreen extends StatelessWidget {
 ![App Screenshot](https://i.imgur.com/HpQB29H.png)
 
 ## Code coverage unit testing
-![App Screenshot](https://i.imgur.com/uolxVaK.png)
+![App Screenshot](https://i.imgur.com/A8iAltJ.png)
 
-## Remaining features in the project or need to be done
-* Unable to modify the model 
-* Unable to modify or customize the user interface (UI) of the widgets we've set up, including the tabbar, datepicker, and container.
-* Unable to modify parameters for payment and income
+## Remaining Features or To-Do
+* Modification of the model
+* Customization of the user interface (UI) for widgets, including tab bar, date picker, and container
+* Parameter modification for payment and income
 
 ## Issues
-
-Please file any issues, bugs or feature requests as an issue on our [GitHub](github link ) page. you can contact us at - [@SouksavathPMS](https://github.com/SouksavathPMS). 
+Please report any issues, bugs, or feature requests on our [GitHub](https://github.com/cometdigitalagency/hackathon-banking) page. Feel free to reach out to us on GitHub or via email at souksavathpms.official2021@gmail.com.
 
 ## Authors
 
@@ -199,5 +176,7 @@ Please file any issues, bugs or feature requests as an issue on our [GitHub](git
 If you have any feedback, please reach out to us at souksavathpms.official2021@gmail.com
 
 ## Comet Hackathon 2023 
-
 [Comet Digital Agency ](https://www.facebook.com/CometDigitalAgency)
+
+ໂປຣເຈັກນີ້ແມ່ນສ້າງຂື້ນມາເພື່ອນຳໃຊ້ເຂົ້າໃນການແຂ່ງຂັນງານ Comet Hackathon 2023 ພາຍໃຕ້ຫົວຂໍ້ທີ່ວ່າ: " ການນຳເອົາ Software ທີ່ມີຢູ່ໃນລາວ ແລະ ນຳມາປັບປຸງໃຫ້ມີປະສິດທິພາບຫຼາຍຂື້ນ ໂດຍນຳໃຊ້ flutter ເພື່ອພັດທະນາໃຫ້ຢູ່ໃນລັກສະນະ module ຫຼື package "
+
