@@ -177,6 +177,14 @@ class HistoryScreen extends StatelessWidget {
 ## Demo
 ![App Screenshot](https://i.imgur.com/HpQB29H.png)
 
+## Code coverage unit testing
+![App Screenshot](https://i.imgur.com/A8iAltJ.png)
+
+## Remaining features in the project or need to be done
+* Unable to modify the model 
+* Unable to modify or customize the user interface (UI) of the widgets we've set up, including the tabbar, datepicker, and container.
+* Unable to modify parameters for payment and income
+
 ## Issues
 
 Please file any issues, bugs or feature requests as an issue on our [GitHub](github link ) page. you can contact us at - [@SouksavathPMS](https://github.com/SouksavathPMS). 
