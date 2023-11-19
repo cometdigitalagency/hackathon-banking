@@ -74,30 +74,27 @@ import 'package:super_shy_transaction_filter/super_shy_transaction_filter.dart';
 //import the necessary package as we requried
 
 SuperShyTransaction(
-    superShyTransactionList: [
-    // this property required list of SuperShyTransactionModel
-    SuperShyTransactionModel(
-        title: "ໄດ້ຮັບເງິນ", // custom title
-        value: 20000, // custom value (amount of money, etc.)
-        isIncome: true, // if this true meaning Income
-        date: DateTime.now()
-            .subtract(const Duration(days: 20)), // custom date
-        suffixTitle: "LAK", // custom currency
-        category: "ອາຫານ", // custom category
+  superShyTransactionList: [
+  // this property required list of SuperShyTransactionModel
+  SuperShyTransactionModel(
+      title: "ໄດ້ຮັບເງິນ", // custom title
+      value: 20000, // custom value (amount of money, etc.)
+      isIncome: true, // if this true meaning Income
+      date: DateTime.now()
+          .subtract(const Duration(days: 20)), // custom date
+      suffixTitle: "LAK", // custom currency
+      category: "ອາຫານ", // custom category
+  ),
+  SuperShyTransactionModel(
+      title: "ຊຳລະເງິນ",
+      value: 200000,
+      isIncome: false, // if this true meaning Payment
+      date: DateTime.now().subtract(const Duration(days: 10)),
+      suffixTitle: "LAK",
+      category: "ຂອງຂັວນ ແລະ ການບໍລິຈາກ",
     ),
-    SuperShyTransactionModel(
-        title: "ຊຳລະເງິນ",
-        value: 200000,
-        isIncome: false, // if this true meaning Payment
-        date: DateTime.now().subtract(const Duration(days: 10)),
-        suffixTitle: "LAK",
-        category: "ຂອງຂັວນ ແລະ ການບໍລິຈາກ",
-     ),
-    ],
-   )
-
-
-
+  ],
+)
 
 ```
 
